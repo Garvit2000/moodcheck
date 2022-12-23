@@ -49,7 +49,7 @@ body {
 
 
 .swiper {
-  width: 100%;
+  width: 70%;
   padding-top: 50px;
   padding-bottom: 50px;
 
@@ -65,4 +65,39 @@ body {
 .swiper-slide img {
   display: block;
   width: 100%;
+}
+
+.listed-items{
+list-style-type: none;
+}
+
+.content{
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-list{
+  margin: 20px 20px;
+  padding: 20px 40px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.howareu{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#id1{
+  position: relative;
+  transition: all .6s ease-in-out;
+}
+#id3{
+  position: relative;
+  transition: all .6s ease-in-out;
+}
+#id4{
+  position: relative;
+  transition: all .6s ease-in-out;
 }
