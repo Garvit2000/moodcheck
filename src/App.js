@@ -14,56 +14,54 @@ SwiperCore.use([Pagination, Navigation]);
 export default function App() {
   const [currentMood, setCurrentMood] = useState(0);
 
-
   const emotion1 = [
     "joy",
     "impressive",
     "cool",
     "amazing",
     "serene",
-    "beautiful"
-]
-  const emotion2 = [
-    "rage",
-    "hate",
-    "power",
-    "alone",
-    "fight",
-    "high"
-  ]
+    "beautiful",
+  ];
+  const emotion2 = ["rage", "hate", "power", "alone", "fight", "high"];
   const emotion3 = [
     "lonely",
     "depressed",
     "anxiety",
     "rejected",
     "dissappinted",
-    "in grief"
-  ]
+    "in grief",
+  ];
   const emotion4 = [
     "super happy",
     "awesome",
     "rushing",
     "surprise",
     "dance",
-    "great"
-  ]
+    "great",
+  ];
 
   function moveElement1() {
-    document.getElementById("id1").style.transform = "rotate(7deg)"
-    // const div1 = document.getElementById('id1');
-    // const div4 = document.getElementById('id4');
-    // const div3 = document.getElementById('id3');
-    
-    // div1.style.top = "101px";
-    // div4.style.left = "-160px";
-    // div3.style.top = "-101px";
-    // div3.style.left = "160px"
+   // document.getElementById("id1").style.transform = "rotate(7deg)";
+    const div1 = document.getElementById('id1');
+    const div4 = document.getElementById('id4');
+    const div3 = document.getElementById('id3');
+
+    div1.style.top = "101px";
+    div4.style.left = "-160px"
+    div3.style.top = "-101px"
+    div3.style.left = "160px"
 
     //div.style.left = "-50px";
   }
   function moveElement2() {
-   //console.log("yes")
-   document.getElementById("id1").style.transform = "rotate(-7deg)"
+    const div1 = document.getElementById('id1');
+    const div4 = document.getElementById('id4');
+    const div3 = document.getElementById('id3');
+
+    div4.style.top = "-101px";
+    div3.style.left = "160px"
+    div1.style.top = "101px"
+    div1.style.left = "-160px"
   }
 
   return (
@@ -71,18 +69,20 @@ export default function App() {
       <h2 className="howareu">How are you feeling today?</h2>
       <Swiper
         onSlideChange={(data) => {
-          
-          if(currentMood < data?.activeIndex){
-            moveElement1();
+          const div1 = document.getElementById('id1');
+          const div4 = document.getElementById('id4');
+          const div3 = document.getElementById('id3');
 
-          }
-          else{
+
+
+          if (currentMood < data?.activeIndex) {
+            moveElement1();
+          } else {
             moveElement2();
           }
 
           console.log(currentMood, data?.activeIndex);
           setCurrentMood(data?.activeIndex);
-          
         }}
         slidesPerView={3}
         centeredSlides={true}
@@ -95,11 +95,18 @@ export default function App() {
         <SwiperSlide>Sad</SwiperSlide>
         <SwiperSlide>Excited</SwiperSlide>
       </Swiper>
-      
-      <div className="content container" >
-          {<Emotions emotion1 = {emotion1} emotion2 = {emotion2} emotion3 = {emotion3} emotion4 = {emotion4} currentmood = {currentMood+1}/>}
-      </div>
 
+      <div className="content container">
+        {
+          <Emotions
+            emotion1={emotion1}
+            emotion2={emotion2}
+            emotion3={emotion3}
+            emotion4={emotion4}
+            currentmood={currentMood + 1}
+          />
+        }
+      </div>
     </div>
   );
 }
