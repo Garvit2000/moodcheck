@@ -108,3 +108,27 @@ list-style-type: none;
   position: relative;
   transition: all .6s ease-in-out;
 }
+
+.form{
+  text-align: center;
+}
+.login-btn{
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.auth{
+  margin-top: 50px;
+}
+
+.btnn{
+  border: 2px black;
+}
+
+.label{
+  margin-right: 5px;
+}
+.gap{
+  margin-top: 10px;
+}
